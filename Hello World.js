@@ -13,3 +13,33 @@ var app2 = new Vue({
         message4: 'rose'
     }
 })
+
+var app3 = new Vue({
+    el:'#app-3',
+    data:{
+        see:true
+    }
+})
+
+var app4 = new Vue({
+    el: '#app-4',
+    data:{
+        todos:[
+            {textbbb: '学习 JavaScripts'},
+            {textbbb: '学习 Vue'},
+            {text: '整个牛逼项目'}
+        ]
+    }
+})
+
+var app5 = new Vue({
+    el: '#app-5',
+    data:{
+        message5: "Hello Vue.js !"
+    },
+    methods:{
+        reverseMessage: function(){
+            this.messaget5 = this.message5.split('').reverse().join('')
+        }
+    }
+})

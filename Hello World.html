@@ -13,10 +13,25 @@
     </div> 
     <div id="app-2">
         <span v-bind:title="message2" v-bind:id="message3" class="message4">
-             鼠标悬停 + {{ message4 }}
-        </span>
+             鼠标悬停 + {{ message4  }}
+        </span>        
     </div>
+    <div id= "app-3">
+        <p v-if="see">现在你看到我了哦~</p>
+    </div>
+    <div id="app-4">
+        <!--有序列表-->
+        <ol>
+            <li v-for="aaa in todos">
+                {{ aaa.textbbb }}
+            </li>
+        </ol>
+    </div>
+    <div id="app-5">
+        <p>{{ message5 }}</p>
+        <button v-on:click="reverseMessage">逆转消息</button>
 
+    </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="Hello World.js"></script>
