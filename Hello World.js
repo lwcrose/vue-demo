@@ -43,3 +43,30 @@ var app5 = new Vue({
         }
     }
 })
+
+var app6 = new Vue({
+    el: '#app-6',
+    data:{
+        message6: "Hello Vue6 !",
+        message62: "Hello Vue6-2 !"
+    }
+})
+
+Vue.component('todo-item',{
+    //todo-item 组件现在接受一个 “prop”，类似于一个自定义特性。
+    //这个 prop 名为 todoprop
+    props: ['todoprop'],
+    //template: '<li> 这是一个代办项。</li>'
+    template: '<li> {{ todoprop.text }} </li>'
+})
+
+var app7 = new Vue({
+    el: '#app-7',
+    data:{
+        groceryList:[
+            {id:0, text: 'Vegetable'},
+            {id:1, text: 'Milk'},
+            {id:2, text: 'Anything Other'}
+        ]
+    }
+})

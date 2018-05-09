@@ -30,7 +30,28 @@
     <div id="app-5">
         <p>{{ message5 }}</p>
         <button v-on:click="reverseMessage">逆转消息</button>
-
+    </div>
+    <div id="app-6">
+        <p> "---" + {{ message6 }} </p>
+        <input v-model="message62">
+    </div>
+    <ol>
+        <!--创建一个 todo-item 组件的实例 -->
+        <todo-item>ghi</todo-item>
+    </ol>
+    <div id="app-7">
+        <ol>
+            <!--
+                现在我们为每一个todo-item 提供 todo 对象，
+                todo 对象是变量，即其内容可以是动态的。
+                我们也需要为每一个组件提供一个 “Key”，具体稍后在做详解。
+            -->
+            <todo-item
+             v-for = "item in groceryList"
+             v-bind:todoprop = "item"
+             v-bind:key = "item.id">
+            </todo-item>
+        </ol>
     </div>
 </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
