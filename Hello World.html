@@ -12,8 +12,8 @@
         {{ message }}
     </div> 
     <div id="app-2">
-        <span v-bind:title="message2" v-bind:id="message3" class="message4">
-             鼠标悬停 + {{ message4  }}
+        <span v-bind:title="message21" v-bind:id="message22" class="message23">
+             鼠标悬停 + {{ message23  }}
         </span>        
     </div>
     <div id= "app-3">
@@ -53,6 +53,22 @@
             </todo-item>
         </ol>
     </div>
+    <div id="app-8">
+        <p>{{ foo }}</p>
+         <button v-on:click=" foo = 'baz' ">Change it</button>
+    </div>
+    <div id="app-9">
+        <span>Message91: {{ msg91 }}</span>
+        <span v-once>Message92: {{ msg92 }}</span>
+        <p>Using mustaches: {{ rawHtml }}</p>
+        <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    </div>
+    <div id="app-10">
+        <div v-bind:id="dynamicId">
+            <button v-bind:disabled="isButtonDisabled">Button</button>
+        </div>
+    </div>
+
 </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="Hello World.js"></script>
