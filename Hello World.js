@@ -42,18 +42,21 @@ var app5 = new Vue({
     methods:{
         reversedMessage5: function(){
             this.message5 = this.message5.split('').reverse().join('')
-        }        
+        },
+        reversedMessage53: function(){
+        return this.message53 = this.message53.split('').reverse().join('')   
+        }    
     },
     computed:{
         reversedMessage52: function(){
             return this.message52.split('').reverse().join('')
         }
     },
-    methods:{
-        reversedMessage53: function(){
-            return this.message53 = this.message53.split('').reverse().join('')
-        }
-    }
+    //methods:{
+    //    reversedMessage53: function(){
+    //        return this.message53 = this.message53.split('').reverse().join('')
+    //    }
+    //}
     //console.log(app5.reversedMessage52)
 })
 
