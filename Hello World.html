@@ -8,17 +8,22 @@
     <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
 </head>
 <body>
+
     <div id = "app-1">
         {{ message }}
     </div> 
+
     <div id="app-2">
+        <!-- "v-bind:" 的缩写是 ":" -->
         <span v-bind:title="message21" v-bind:id="message22" class="message23">
              鼠标悬停 + {{ message23  }}
         </span>        
     </div>
+
     <div id= "app-3">
         <p v-if="see">现在你看到我了哦~</p>
     </div>
+
     <div id="app-4">
         <!--有序列表-->
         <ol>
@@ -27,18 +32,28 @@
             </li>
         </ol>
     </div>
+
     <div id="app-5">
         <p>{{ message5 }}</p>
-        <button v-on:click="reverseMessage">逆转消息</button>
+        <!-- "v-on:" 的缩写是 "@" -->
+        <button v-on:click="reversedMessage5">逆转消息</button>
+        <p>Original message: "{{ message52 }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage52 }}"</p>
+        <p>Original message: "{{ message53 }}"</p>
+        <p>Reversed message: "{{ reversedMessage53() }}"</p>
+        
     </div>
+
     <div id="app-6">
         <p> "---" + {{ message6 }} </p>
         <input v-model="message62">
     </div>
+
     <ol>
         <!--创建一个 todo-item 组件的实例 -->
         <todo-item>ghi</todo-item>
     </ol>
+
     <div id="app-7">
         <ol>
             <!--
@@ -53,16 +68,19 @@
             </todo-item>
         </ol>
     </div>
+
     <div id="app-8">
         <p>{{ foo }}</p>
          <button v-on:click=" foo = 'baz' ">Change it</button>
     </div>
+
     <div id="app-9">
         <span>Message91: {{ msg91 }}</span>
         <span v-once>Message92: {{ msg92 }}</span>
         <p>Using mustaches: {{ rawHtml }}</p>
         <p>Using v-html directive: <span v-html="rawHtml"></span></p>
     </div>
+
     <div id="app-10">
         <div v-bind:id="dynamicId">
             <button v-bind:disabled="isButtonDisabled">Button</button>

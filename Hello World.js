@@ -35,13 +35,26 @@ var app4 = new Vue({
 var app5 = new Vue({
     el: '#app-5',
     data:{
-        message5: "Hello Vue.js !"
+        message5: "Hello Vue.js !",
+        message52: "Hello",
+        message53: "Dear Lex"
     },
     methods:{
-        reverseMessage: function(){
-            this.messaget5 = this.message5.split('').reverse().join('')
+        reversedMessage5: function(){
+            this.message5 = this.message5.split('').reverse().join('')
+        }        
+    },
+    computed:{
+        reversedMessage52: function(){
+            return this.message52.split('').reverse().join('')
+        }
+    },
+    methods:{
+        reversedMessage53: function(){
+            return this.message53 = this.message53.split('').reverse().join('')
         }
     }
+    //console.log(app5.reversedMessage52)
 })
 
 var app6 = new Vue({
@@ -124,6 +137,6 @@ var app10 = new Vue({
     el: "#app-10",
     data:{
         dynamicId: "JIAJIA",
-        isButtonDisabled: true // null/undefined/false ---> <Button>
+        isButtonDisabled: true // null/undefined/false ---> disabled 特性不会被包含在渲染出来的<Button>元素中
     }
 })
