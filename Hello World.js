@@ -37,19 +37,23 @@ var app5 = new Vue({
     data:{
         message5: "Hello Vue.js !",
         message52: "Hello",
-        message53: "Dear Lex"
+        message53: "Dear Lex",
+        message54: "Hi Rose"
     },
     methods:{
         reversedMessage5: function(){
             this.message5 = this.message5.split('').reverse().join('')
         },
         reversedMessage53: function(){
-        return this.message53 = this.message53.split('').reverse().join('')   
+            return  this.message53.split('').reverse().join('')   
         }    
     },
     computed:{
         reversedMessage52: function(){
             return this.message52.split('').reverse().join('')
+        },
+        reversedMessage54: function(){
+            return this.message54.split('').reverse().join('')
         }
     },
     //methods:{
