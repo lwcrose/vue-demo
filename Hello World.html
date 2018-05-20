@@ -95,10 +95,77 @@
     <div id="watch-example">
         <p>
             Ask a yes/no question:
-            <input v-module="question">
+            <input v-model="question">
         </p>
         <P> {{ answer }} </P>
     </div>
+
+    <div id = "vue-v-if">
+        <h1 v-if="OK">Yes 0</h1>
+        <h1 v-else="NO">No 0</h1>
+        <template v-if = "OK">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+    </div>
+
+    <div v-if="Math.random() > 0.5">
+        Now you see me
+    </div>
+    <div v-else> <!--or 'v-else-if' -->
+        Now you don't
+    </div>
+
+    <div v-if="type === 'A'">
+        A
+      </div>
+      <div v-else-if="type === 'B'">
+        B
+      </div>
+      <div v-else-if="type === 'C'">
+        C
+      </div>
+      <div v-else>
+        Not A/B/C
+      </div>
+
+      <div id='vue-if-else'>
+      <template v-if="loginType === 'username'">
+        <label>Username</label>
+        <input placeholder="Enter your username">
+      </template>
+      <template v-else>
+        <label>Email</label>
+        <input placeholder="Enter your email address">
+      </template>
+    </div>
+
+    <div id="todo-list-example">
+        <input
+          v-model="newTodoText"
+          v-on:keyup.enter="addNewTodo"
+          placeholder="Add a todo"
+        >
+        <ul>
+          <li
+            is="todo-item"
+            v-for="(todo, index) in todos"
+            v-bind:key="todo.id"
+            v-bind:title="todo.title"
+            v-on:remove="todos.splice(index, 1)"
+          ></li>
+        </ul>
+    </div>
+
+    <div id="example-1">
+        <button v-on:click="counter += 1">Add 1</button>
+        <p>The button above has been clicked {{ counter }} times.</p>
+    </div>
+    <div id="example-2">
+        <!-- `greet` 是在下面定义的方法名 -->
+        <button v-on:click="greet">Greet</button>
+      </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -125,12 +192,13 @@
             }
         },
         methods: {
-            //
+            /*
             // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
             // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
             // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于   
             // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
             // 请参考：https://lodash.com/docs#debounce
+            */
             getaAnswer: _.debounce(
                 function () {
                     if (this.question.indexOf('?') === -1) {
