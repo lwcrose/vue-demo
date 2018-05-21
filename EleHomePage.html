@@ -7,17 +7,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--饿了么网站首页-->
     <title>饿了么-网上订餐_外卖_饿了么订餐官网</title>
-    <!-- Title 的标签图片似乎自适应选取的最大支持像素图片， sizes 在这里似乎没有确切用处，删掉 sizes 字段结果一样-->
+    <!-- 不同平台(Win & Mac)下的 不同浏览器(Chrome & Firefox & Safari ...) 默认优先选用的图片规格不一致，MacChrome:32x32, WinChrome:16x16 ... -->
     <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon-16x16.png" type="image/png" sizes="16x16" />
     <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon-32x32.png" type="image/png" sizes="32x32" />
-    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"/>
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"
+    />
 </head>
 
 <body>
+    <!-- 图片链接： src 不能正常显示时，就会显示 alt 里面的东西-->
+    <a href="" title="还是会跳转到 Home Page 滴~~~"><img src="https://shadow.elemecdn.com/faas/desktop/media/img/map-logo.9a26ef.png" alt="RoseStudy"></a>
     <!-- 新标签打开 -->
-<a href="Register.html" target="_blank">注册</a>
-<!-- 原标签打开 -->
-<a href="Register.html">登录</a>
+    <a href="Register.html" target="_blank" title="你确定你要注册成为新用户吗？">注册</a>
+    <!-- 原标签打开 "_self"-->
+    <a href="Register.html" title="欢迎光临'老用户'!">登录</a>
+    <div id="city">
+        <select name="citySelect" id="citySelect">
+            <option value="0" disabled="disabled">请选择</option>
+            <option value="1">上海</option>
+            <option value="2">北京</option>
+            <option value="3">广州</option>
+            <option value="4">深圳</option>
+        </select>
+    </div>
+    <div id="detailAddress">
+        <input type="text" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）">
+        <input type="submit" value="搜索" title="Input 类型">
+        <button title="Button 类型">搜索button</button>
+    </div>
+    <div id="popularize">
+        <p>新用户首次下单</p>
+        <p>最高立减30元</p>
+        <p>立即下载APP，享受更多优惠吧！！！</p>
+    </div>
+    <div id="pageFooter">
+        <a href="openshop.html">我要开店</a>
+        <a href="contactus.html">联系我们</a>
+        <a href="agreement.html">服务条款和协议</a>
+        <a href="joinus.html">加入我们</a>
+        <a href="fndelivery.html">蜂鸟配送</a>
+        <a href="badcredit.html" target="_blank">失信人员查询</a>
+    </div>
 </body>
 
 <!--切换标签离开当前页面时改变title提示-->
