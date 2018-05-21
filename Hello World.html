@@ -100,10 +100,10 @@
         <P> {{ answer }} </P>
     </div>
 
-    <div id = "vue-v-if">
+    <div id="vue-v-if">
         <h1 v-if="OK">Yes 0</h1>
         <h1 v-else="NO">No 0</h1>
-        <template v-if = "OK">
+        <template v-if="OK">
             <h1>Title</h1>
             <p>Paragraph 1</p>
             <p>Paragraph 2</p>
@@ -113,48 +113,39 @@
     <div v-if="Math.random() > 0.5">
         Now you see me
     </div>
-    <div v-else> <!--or 'v-else-if' -->
+    <div v-else>
+        <!--or 'v-else-if' -->
         Now you don't
     </div>
 
     <div v-if="type === 'A'">
         A
-      </div>
-      <div v-else-if="type === 'B'">
+    </div>
+    <div v-else-if="type === 'B'">
         B
-      </div>
-      <div v-else-if="type === 'C'">
+    </div>
+    <div v-else-if="type === 'C'">
         C
-      </div>
-      <div v-else>
+    </div>
+    <div v-else>
         Not A/B/C
-      </div>
+    </div>
 
-      <div id='vue-if-else'>
-      <template v-if="loginType === 'username'">
-        <label>Username</label>
-        <input placeholder="Enter your username">
-      </template>
-      <template v-else>
-        <label>Email</label>
-        <input placeholder="Enter your email address">
-      </template>
+    <div id='vue-if-else'>
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address">
+        </template>
     </div>
 
     <div id="todo-list-example">
-        <input
-          v-model="newTodoText"
-          v-on:keyup.enter="addNewTodo"
-          placeholder="Add a todo"
-        >
+        <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
         <ul>
-          <li
-            is="todo-item"
-            v-for="(todo, index) in todos"
-            v-bind:key="todo.id"
-            v-bind:title="todo.title"
-            v-on:remove="todos.splice(index, 1)"
-          ></li>
+            <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index, 1)"></li>
         </ul>
     </div>
 
@@ -165,7 +156,98 @@
     <div id="example-2">
         <!-- `greet` 是在下面定义的方法名 -->
         <button v-on:click="greet">Greet</button>
-      </div>
+    </div>
+
+
+
+    <div id='example-3'>
+        <!-- 单行文本-->
+        <input v-model="message30" placeholder="edit me">
+        <p>Message is: {{ message30 }}</p>
+        <!-- 多行文本-->
+        <span>Multiline message is:</span>
+        <p style="white-space: pre-line;">{{ message31 }}</p>
+        <br>
+        <textarea v-model="message31" placeholder="add multiple lines"></textarea>
+        <!-- 单个复选框，单个复选框，绑定到布尔值-->
+        <input type="checkbox" id="checkbox" v-model="checked">
+        <label for="checkbox">{{ checked }}</label>
+        <!-- 多个复选框，多个复选框，绑定到同一个数组：-->
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <!--单选按钮-->
+    <div id="example-4">
+        <input type="radio" id="one" value="One" v-model="picked">
+        <label for="one">One</label>
+        <br>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <span>Picked: {{ picked }}</span>
+    </div>
+
+    <!--单项选择框-->
+    <div id="example-5">
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+    <!--多项选择框，多选时 (绑定到一个数组)：-->
+    <div id="example-6">
+        <select v-model="selected60" multiple style="width: 50px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <br>
+        <span>Selected: {{ selected60 }}</span>
+        <br>
+        <!--用 v-for 渲染的动态选项：-->
+        <select v-model="selected61">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <span>Selected: {{ selected61 }}</span>
+    </div>
+
+
+
+    <!--组件基础-->
+    <div id="components-demo">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+
+        <blog-post title="My journey with Vue"></blog-post>
+        <blog-post title="Blogging with Vue"></blog-post>
+        <blog-post title="Why Vue is so fun"></blog-post>
+    </div>
+    <!--使用 v-bind 来动态传递 prop-->
+    <div id='blog-post-demo'>
+        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+    </div>
+
+    <div id="blog-posts-events-demo">
+        <div :style="{ fontSize: postFontSize + 'em' }">
+            <blog-postt v-for="post in posts" v-bind:key="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize += 0.1"></blog-postt>
+        </div>
+    </div>
+
+    <div id="model-test">
+        <custom-input v-model="searchText"></custom-input>
+    </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

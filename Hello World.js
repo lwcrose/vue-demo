@@ -222,23 +222,126 @@ new Vue({
 var example1 = new Vue({
     el: '#example-1',
     data: {
-      counter: 0
+        counter: 0
     }
-  })
-  var example2 = new Vue({
+})
+var example2 = new Vue({
     el: '#example-2',
     data: {
-      name: 'Vue.js'
+        name: 'Vue.js'
     },
     // 在 `methods` 对象中定义方法
     methods: {
-      greet: function (event) {
-        // `this` 在方法里指向当前 Vue 实例
-        alert('Hello ' + this.name + '!')
-        // `event` 是原生 DOM 事件
-        if (event) {
-          alert(event.target.tagName)
+        greet: function (event) {
+            // `this` 在方法里指向当前 Vue 实例
+            alert('Hello ' + this.name + '!')
+            // `event` 是原生 DOM 事件
+            if (event) {
+                alert(event.target.tagName)
+            }
         }
-      }
     }
+})
+
+new Vue({
+    el: '#example-3',
+    data: {
+        checkedNames: [],
+        message30: "",
+        message31: ""
+    }
+})
+
+new Vue({
+    el: '#example-4',
+    data: {
+        picked: ''
+    }
+})
+
+new Vue({
+    el: '#example-5',
+    data: {
+        selected: ''
+    }
+})
+
+new Vue({
+    el: '#example-6',
+    data: {
+        selected60: [],
+        selected61: 'A',
+        options: [
+            { text: 'One', value: 'A' },
+            { text: 'Two', value: 'B' },
+            { text: 'Three', value: 'C' }
+        ]
+    }
+})
+// 定义一个名为 button-counter 的新组件
+//Vue.component 全局注册
+Vue.component('button-counter', {
+    data: function () {  //一个组件的 data 选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝：
+        return {
+            count: 0
+        }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+})
+//全局注册的组件可以用在其被注册之后的任何 (通过 new Vue) 新创建的 Vue 根实例，也包括其组件树中的所有子组件的模板中。
+//new Vue({ el: '#components-demo' })
+
+//props 参数，用于传入数据
+Vue.component('blog-post', {
+    props: ['title'],
+    template: '<h3>{{ title }}</h3>'
+})
+new Vue({ el: '#components-demo' })
+//一开始不清楚要渲染的具体内容，比如从一个 API 获取博文列表的时候，是非常有用的。
+new Vue({
+    el: '#blog-post-demo',
+    data: {
+        posts: [
+            { id: 1, title: 'My journey with Vue' },
+            { id: 2, title: 'Blogging with Vue' },
+            { id: 3, title: 'Why Vue is so fun' },
+        ]
+    }
+})
+
+
+Vue.component('blog-postt', {
+    props: ['post'],
+    template: `
+      <div class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <button v-on:click="$emit('enlarge-text')">
+  Enlarge text
+</button>
+        <div v-html="post.content"></div>
+      </div>
+    `
+})
+new Vue({
+    el: '#blog-posts-events-demo',
+    data: {
+        posts: [
+            { id: 1, title: 'My journey with Vue tt' },
+            { id: 2, title: 'Blogging with Vue tt' },
+            { id: 3, title: 'Why Vue is so fun tt' },],
+        postFontSize: 1
+    }
+})
+
+Vue.component('custom-input', {
+    props: ['value'],
+    template: `
+      <input
+        v-bind:value="value"
+        v-on:input="$emit('input', $event.target.value)"
+      >
+    `
+  })
+  new Vue({
+      el: '#model-test'
   })
