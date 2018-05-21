@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--饿了么网站首页-->
+    <title>饿了么-网上订餐_外卖_饿了么订餐官网</title>
+    <!-- Title 的标签图片似乎自适应选取的最大支持像素图片， sizes 在这里似乎没有确切用处，删掉 sizes 字段结果一样-->
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon-16x16.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon-32x32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"/>
+</head>
+
+<body>
+    <!-- 新标签打开 -->
+<a href="Register.html" target="_blank">注册</a>
+<!-- 原标签打开 -->
+<a href="Register.html">登录</a>
+</body>
+
+<!--切换标签离开当前页面时改变title提示-->
+<script>
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState == 'hidden') {   //可选的 visibilityState 有: hidden, visible, prerender, unloaded
+            normal_title = document.title;
+            document.title = '记得回来点单哦 ---😘饿了么';
+        } else document.title = normal_title;
+    });
+</script>
+
+</html>
