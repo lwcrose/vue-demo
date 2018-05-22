@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录</title>
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"
+    />
+    <style type="login.css"></style>
+</head>
+
+<body>
+    <!--短信登录/密码登录-->
+    <div id="login">{{ loginMethod }}
+        <login-component></login-component>
+        <login-component></login-component>
+        <login-component></login-component>
+    </div>
+
+    <!--Vue动态组件-->
+    <div id="dynamic-component-demo-vue" class="demovue">
+        <button v-for="vuetab in vuetabs" v-bind:key="vuetab" 
+        v-bind:class="['vuetab-button', { active: currentvueTab === vuetab }]" 
+        v-on:click="currentvueTab = vuetab">{{ vuetab }}</button>
+
+        <component v-bind:is="currentvueTabComponent" class="vuetab"></component>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--JS 动态组件-->
+    <div id="dynamic-component-demo-js" class="demojs">
+        <button v-for="jstab in jstabs" v-bind:key="jstab.name" 
+        v-bind:class="['jstab-button', { active: currentjsTab.name === jstab.name }]" 
+        v-on:click="currentjsTab = jstab">{{ jstab.name }}</button>
+
+        <component v-bind:is="currentjsTab.component" class="jstab"></component>
+    </div>
+    <!--空格如何处理？？？-->
+    <div id="footer-copyright">
+        增值电信业务许可证 :
+        <a href="http://www.shca.gov.cn/">沪B2-20150033</a>
+        &nbsp;|&nbsp;域名备案:
+        <a href="http://www.miibeian.gov.cn/">沪ICP备 09007032</a>
+        &nbsp;|&nbsp;
+        <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20120305173227823" target="_blank">上海工商行政管理</a>
+        Copyright ©2008-2018 ele.me, All Rights Reserved.
+    </div>
+    <div od="footer-police">
+        <a href="http://www.zx110.org/picp/?sn=310100103568" title="要报警，请点这里！">
+            <img src="http://shadow.elemecdn.com/faas/desktop/media/img/picp_bg.e373b3.jpg" alt="已通过沪公网备案，备案号 310100103568">
+        </a>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="login.js"></script>
+<!--    <script src="https://unpkg.com/vue"></script>   -->
+
+</html>
