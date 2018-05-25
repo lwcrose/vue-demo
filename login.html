@@ -12,20 +12,38 @@
 </head>
 
 <body>
-    <!--短信登录/密码登录-->
-    <div id="login">{{ loginMethod }}
-        <login-component></login-component>
-        <login-component></login-component>
-        <login-component></login-component>
+   
+    <div id="clickme">
+        <clickme></clickme>
+        <clickme></clickme>
+        <clickme></clickme>
+    </div>
+     <!--短信登录/密码登录-->
+    <div id="loginMethod">
+        <button v-for="(loginway,key8,index8) in loginways" v-bind:key=loginway 
+        class="['login', { active:currentloginway === loginway }]"
+        v-on:click="currentloginway=loginway">{{ loginway }}</button>
+        <component v-bind:is="currentLoginComponent" class="Logindetails"></component>
+        <!--短信登录
+        <p><input type="text" v-model="phonenumber" placeholder="手机号"></p>
+        <p><input type="text" v-module="yanzhenma" placeholder="验证码"></p>
+        -->
+        <!--密码登录
+        <p><input type="text" v-modle="loginaccount" placeholder="手机/邮箱/用户名"></p>
+        <p><input type="text" v-modle="password" placeholder="密码"></p>
+        -->
+
+        <button class="Login">登录</button>
     </div>
 
     <!--Vue动态组件-->
     <div id="dynamic-component-demo-vue" class="demovue">
-        <button v-for="vuetab in vuetabs" v-bind:key="vuetab" 
-        v-bind:class="['vuetab-button', { active: currentvueTab === vuetab }]" 
-        v-on:click="currentvueTab = vuetab">{{ vuetab }}</button>
+        <button v-for="(xxx, key1, index1) in vuetabs2"  v-bind:key1="xxx"
+        v-bind:class="['vuetab-button', { active: currentvueTab === xxx }]" 
+        v-on:click="currentvueTab = xxx">{{ xxx }}, {{key1}}, {{index1}}</button>
 
-        <component v-bind:is="currentvueTabComponent" class="vuetab"></component>
+        <component v-bind:is="currentvueTabComponent" class="vuetabclass">
+        </component>
     </div>
     <br>
     <br>
