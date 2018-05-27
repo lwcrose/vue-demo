@@ -12,10 +12,12 @@
 <body>
     <!--hahahha-->
     <div id="app-1">
+        <p>-------------app-1-----------------</p>
         {{ message }}
     </div>
 
     <div id="app-2">
+        <p>-------------app-2-----------------</p>
         <!-- "v-bind:" 的缩写是 ":" -->
         <span v-bind:title="message21" v-bind:id="message22" class="message23">
             鼠标悬停 + {{ message23 }}
@@ -23,10 +25,12 @@
     </div>
 
     <div id="app-3">
+        <p>-------------app-3-----------------</p>
         <p v-if="see">现在你看到我了哦~</p>
     </div>
 
     <div id="app-4">
+        <p>-------------app-4-----------------</p>
         <!--有序列表-->
         <ol>
             <li v-for="aaa in todos">
@@ -36,6 +40,7 @@
     </div>
 
     <div id="app-5">
+        <p>-------------app-5-----------------</p>
         <p>{{ message5 }}</p>
         <!-- "v-on:" 的缩写是 "@" -->
         <button v-on:click="reversedMessage5">逆转消息</button>
@@ -49,6 +54,7 @@
     </div>
 
     <div id="app-6">
+        <p>-------------app-6-----------------</p>
         <p> "---" + {{ message6 }} </p>
         <input v-model="message62">
     </div>
@@ -59,6 +65,7 @@
     </ol>
 
     <div id="app-7">
+        <p>-------------app-7-----------------</p>
         <ol>
             <!--
                 现在我们为每一个todo-item 提供 todo 对象，
@@ -71,11 +78,13 @@
     </div>
 
     <div id="app-8">
+        <p>-------------app-8-----------------</p>
         <p>{{ foo }}</p>
         <button v-on:click=" foo = 'baz' ">Change it</button>
     </div>
 
     <div id="app-9">
+        <p>-------------app-9-----------------</p>
         <span>Message91: {{ msg91 }}</span>
         <span v-once>Message92: {{ msg92 }}</span>
         <p>Using mustaches: {{ rawHtml }}</p>
@@ -101,6 +110,7 @@
     </div>
 
     <div id="vue-v-if">
+        <p>-------------vue-v-if-----------------</p>
         <h1 v-if="OK">Yes 0</h1>
         <h1 v-else="NO">No 0</h1>
         <template v-if="OK">
@@ -111,6 +121,7 @@
     </div>
 
     <div v-if="Math.random() > 0.5">
+        <p>-------------vue-v-if-else-----------------</p>
         Now you see me
     </div>
     <div v-else>
@@ -143,6 +154,7 @@
     </div>
 
     <div id="todo-list-example">
+        <p>-------------todo-list-example-----------------</p>
         <input v-model="newTodoText" v-on:keyup.enter="addNewTodo" placeholder="Add a todo">
         <ul>
             <li is="todo-item" v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index, 1)"></li>
@@ -150,10 +162,12 @@
     </div>
 
     <div id="example-1">
+        <p>-------------example-1-----------------</p>
         <button v-on:click="counter += 1">Add 1</button>
         <p>The button above has been clicked {{ counter }} times.</p>
     </div>
     <div id="example-2">
+        <p>-------------exmplpe-2-----------------</p>
         <!-- `greet` 是在下面定义的方法名 -->
         <button v-on:click="greet">Greet</button>
     </div>
@@ -161,18 +175,23 @@
 
 
     <div id='example-3'>
+        <p>-------------emaple-3:单行文本 -----------------</p>
         <!-- 单行文本-->
         <input v-model="message30" placeholder="edit me">
+
         <p>Message is: {{ message30 }}</p>
         <!-- 多行文本-->
+        <p>-------------多行文本-----------------</p>
         <span>Multiline message is:</span>
         <p style="white-space: pre-line;">{{ message31 }}</p>
         <br>
         <textarea v-model="message31" placeholder="add multiple lines"></textarea>
         <!-- 单个复选框，单个复选框，绑定到布尔值-->
+        <p>-------------单个复选框-----------------</p>
         <input type="checkbox" id="checkbox" v-model="checked">
         <label for="checkbox">{{ checked }}</label>
         <!-- 多个复选框，多个复选框，绑定到同一个数组：-->
+        <p>-------------多项复选框-----------------</p>
         <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
         <label for="jack">Jack</label>
         <input type="checkbox" id="john" value="John" v-model="checkedNames">
@@ -184,6 +203,7 @@
     </div>
     <!--单选按钮-->
     <div id="example-4">
+        <p>-------------example-4：单项选择按钮-----------------</p>
         <input type="radio" id="one" value="One" v-model="picked">
         <label for="one">One</label>
         <br>
@@ -195,6 +215,7 @@
 
     <!--单项选择框-->
     <div id="example-5">
+        <p>-------------example-5：单项选择框-----------------</p>
         <select v-model="selected">
             <option disabled value="">请选择</option>
             <option>A</option>
@@ -205,6 +226,7 @@
     </div>
     <!--多项选择框，多选时 (绑定到一个数组)：-->
     <div id="example-6">
+        <p>-------------example-6：多项选择框-----------------</p>
         <select v-model="selected60" multiple style="width: 50px;">
             <option>A</option>
             <option>B</option>
@@ -222,10 +244,15 @@
         <span>Selected: {{ selected61 }}</span>
     </div>
 
-
+    <div id="clickme">
+        <clickme></clickme>
+        <clickme></clickme>
+        <clickme></clickme>
+    </div>
 
     <!--组件基础-->
     <div id="components-demo">
+        <p>-------------component基础-----------------</p>
         <button-counter></button-counter>
         <button-counter></button-counter>
         <button-counter></button-counter>
@@ -246,12 +273,37 @@
     </div>
 
     <div id="model-test">
-        <custom-input v-model="searchText"></custom-input>
+        <p>-------------model-test-----------------</p>
+        <input v-model="searchText"></input>
+        <!--
+            <custom-input v-bind:value="searchText" v-on:input="searchText = $event"></custom-input>
+        -->
+    </div>
+
+    <!--Vue动态组件-->
+    <div id="dynamic-component-demo-vue" class="demovue">
+        <p>-------------动态组件Vue-----------------</p>
+        <button v-for="(xxx, key1, index1) in vuetabs2" v-bind:key1="xxx" v-bind:class="['vuetab-button', { active: currentvueTab === xxx }]"
+            v-on:click="currentvueTab = xxx">{{ xxx }}, {{key1}}, {{index1}}</button>
+
+        <component v-bind:is="currentvueTabComponent" class="vuetabclass">
+        </component>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--JS 动态组件-->
+    <div id="dynamic-component-demo-js" class="demojs">
+        <p>-------------动态组件JS-----------------</p>
+        <button v-for="jstab in jstabs" v-bind:key="jstab.name" v-bind:class="['jstab-button', { active: currentjsTab.name === jstab.name }]"
+            v-on:click="currentjsTab = jstab">{{ jstab.name }}</button>
+
+        <component v-bind:is="currentjsTab.component" class="jstab"></component>
     </div>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="Hello World.js"></script>
+<script src="Hello HTML.js"></script>
 <script src=""></script>
 <script src=""></script>
 <!-- 因为 AJAX 库和通用工具的生态已经相当丰富，Vue 核心代码没有重复 -->

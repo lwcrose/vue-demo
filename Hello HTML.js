@@ -248,7 +248,8 @@ new Vue({
     data: {
         checkedNames: [],
         message30: "",
-        message31: ""
+        message31: "",
+        checked: false
     }
 })
 
@@ -341,7 +342,96 @@ Vue.component('custom-input', {
         v-on:input="$emit('input', $event.target.value)"
       >
     `
-  })
-  new Vue({
-      el: '#model-test'
-  })
+})
+new Vue({
+    el: '#model-test',
+    data:{
+        searchText:""
+    }
+})
+
+//自定义组件名 (字母全小写且必须包含一个连字符)
+Vue.component('clickme', {
+    data: function () {
+        return {
+            count: 0
+        }
+    },
+    template: '<button v-on:click="count++">You click me {{count}} times.</button>'
+})
+new Vue({ el: '#clickme' })
+
+
+//Vue: 不同 tab 动态切换
+Vue.component('vuetab-home', {
+    data: function () {
+        return {
+            key0: 0
+        }
+    },
+    template: '<div>Vue: Home component {{key0}}</div>'
+})
+Vue.component('vuetab-posts', {
+    data: function () {
+        return {
+            key0: 0
+        }
+    },
+    template: '<div>Vue: Posts component {{key0}}</div>'
+})
+Vue.component('vuetab-archive', {
+    data: function () {
+        return {
+            key0: 0
+        }
+    },
+    template: '<div>Vue: Archive component {{key0}}</div>'
+})
+
+new Vue({
+    el: '#dynamic-component-demo-vue',
+    data: {
+        currentvueTab: 'Home',
+        vuetabs: {
+            first: 'firsta',
+            second: 'secondb',
+            third: 'thirdc'
+        },
+        vuetabs2: ['Home', 'Posts', 'Archive']
+    },
+    computed: {
+        currentvueTabComponent: function () {
+            return 'vuetab-' + this.currentvueTab.toLowerCase()
+        }
+    }
+})
+
+//JS: 不同 tab 动态切换
+var jstabs = [
+    {
+        name: 'Home',
+        component: {
+            template: '<div>JS: Home component</div>'
+        }
+    },
+    {
+        name: 'Posts',
+        component: {
+            template: '<div>JS: Posts component</div>'
+        }
+    },
+    {
+        name: 'Archive',
+        component: {
+            template: '<div>JS: Archive component</div>',
+        }
+    }
+]
+
+new Vue({
+    el: '#dynamic-component-demo-js',
+    data: {
+        jstabs: jstabs,
+        currentjsTab: jstabs[0]
+    }
+})

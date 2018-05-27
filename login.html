@@ -6,24 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
-    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"
-    />
-    <style type="login.css"></style>
+    <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon.png" type="image/png" sizes="96x96" author="Rose"/>
+    <link rel="stylesheet" href="login.css"></link>
 </head>
 
 <body>
-   
-    <div id="clickme">
-        <clickme></clickme>
-        <clickme></clickme>
-        <clickme></clickme>
-    </div>
-     <!--短信登录/密码登录-->
-    <div id="loginMethod">
-        <button v-for="(loginway,key8,index8) in loginways" v-bind:key=loginway 
-        class="['login', { active:currentloginway === loginway }]"
-        v-on:click="currentloginway=loginway">{{ loginway }}</button>
-        <component v-bind:is="currentLoginComponent" class="Logindetails"></component>
+    <!--短信登录/密码登录-->
+    <div id="loginMethod" class="tab-button">
+        <button v-for="(loginway,key8,index8) in loginways" v-bind:key8=key8 v-bind:class="['login', { active:currentloginway === key8 }]"
+            v-on:click="currentloginway=key8">{{ loginway }}</button>
+        <keep-alive>
+            <component v-bind:is="currentLoginComponent" class="Logindetails"></component>
+        </keep-alive>
         <!--短信登录
         <p><input type="text" v-model="phonenumber" placeholder="手机号"></p>
         <p><input type="text" v-module="yanzhenma" placeholder="验证码"></p>
@@ -32,30 +26,14 @@
         <p><input type="text" v-modle="loginaccount" placeholder="手机/邮箱/用户名"></p>
         <p><input type="text" v-modle="password" placeholder="密码"></p>
         -->
-
-        <button class="Login">登录</button>
+        <button class="Login tab">登录</button>
     </div>
-
-    <!--Vue动态组件-->
-    <div id="dynamic-component-demo-vue" class="demovue">
-        <button v-for="(xxx, key1, index1) in vuetabs2"  v-bind:key1="xxx"
-        v-bind:class="['vuetab-button', { active: currentvueTab === xxx }]" 
-        v-on:click="currentvueTab = xxx">{{ xxx }}, {{key1}}, {{index1}}</button>
-
-        <component v-bind:is="currentvueTabComponent" class="vuetabclass">
-        </component>
+    <div id="remind">
+        温馨提示：未注册饿了么帐号的手机号，登录时将自动注册，且代表您已同意
+        <!--link position need to update !!!! TBD -->
+        <a href="eleagreement.html">《用户服务协议》</a>
     </div>
-    <br>
-    <br>
-    <br>
-    <!--JS 动态组件-->
-    <div id="dynamic-component-demo-js" class="demojs">
-        <button v-for="jstab in jstabs" v-bind:key="jstab.name" 
-        v-bind:class="['jstab-button', { active: currentjsTab.name === jstab.name }]" 
-        v-on:click="currentjsTab = jstab">{{ jstab.name }}</button>
-
-        <component v-bind:is="currentjsTab.component" class="jstab"></component>
-    </div>
+    <div id="eleowner">所有方：上海拉扎斯信息科技有限公司</div>
     <!--空格如何处理？？？-->
     <div id="footer-copyright">
         增值电信业务许可证 :
