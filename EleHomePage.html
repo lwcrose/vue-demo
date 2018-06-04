@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--饿了么网站首页-->
     <title>饿了么-网上订餐_外卖_饿了么订餐官网</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="elefont.css" />
     <!-- 不同平台(Win & Mac)下的 不同浏览器(Chrome & Firefox & Safari ...) 默认优先选用的图片规格不一致，MacChrome:32x32, WinChrome:16x16 ... -->
     <link rel="icon" href="http://static2.ele.me/eleme/desktop/media/img/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -17,30 +18,42 @@
 
 <body>
     <div id="upper">
-        <div id=firstline>
-            <!-- 图片链接： src 不能正常显示时，就会显示 alt 里面的东西-->
-            <a href="" title="还是会跳转到 Home Page 滴~~~">
-                <img src="https://shadow.elemecdn.com/faas/desktop/media/img/map-logo.9a26ef.png" alt="RoseStudy" height=22px>
-            </a>
-            <!-- 新标签打开 -->
-            <a class="login" href="Register.html" target="_blank" title="你确定你要注册成为新用户吗？">注册</a>
-            <!-- 原标签打开 "_self"-->
-            <a class="login" href="Register.html" title="欢迎光临'老用户'!">登录</a>
-            <button id="opennewshop" onclick="window.open('openshop.html')">我要开店
-                            </button>
+        <div id="firstline" class="container1">
+            <div class="row no-margin">
+                <div class="col-9 no-padding">
+                    <!-- 图片链接： src 不能正常显示时，就会显示 alt 里面的东西-->
+                    <a href="" title="还是会跳转到 Home Page 滴~~~">
+                        <img src="https://shadow.elemecdn.com/faas/desktop/media/img/map-logo.9a26ef.png" alt="RoseStudy" width="220px">
+                    </a>
+                </div>
+                <div class="col-3 no-padding">
+                    <button id="opennewshop" class="pull-right" onclick="window.open('openshop.html')">我要开店
+                    </button>
+                    <!-- 原标签打开 "_self"-->
+                    <a class="pull-right login" href="Register.html" title="欢迎光临'老用户'!">登录</a>
+                    <span class="pull-right">&nbsp;|&nbsp;</span>
+                    <!-- 新标签打开 -->
+                    <a class="pull-right login" href="Register.html" target="_blank" title="你确定你要注册成为新用户吗？">注册</a>
+
+                </div>
+            </div>
         </div>
-        <div id="city">
-            <select name="citySelect" id="citySelect">
+        <div class="map-logo">
+            <img src="http://shadow.elemecdn.com/faas/desktop/media/svg/map-logo-center.425427.svg" alt="eleme">
+        </div>
+        <div class="citycenter">
+            <!-- <select id="city-select" name="citySelect" class="city no-padding no-margin no-border">
                 <option value="0" disabled="disabled">请选择</option>
                 <option value="1">上海</option>
                 <option value="2">北京</option>
                 <option value="3">广州</option>
                 <option value="4">深圳</option>
-            </select>
+            </select> -->
+            <a class="city no-padding no-margin no-border">请选择</a>
+            <input type="text" class="city no-padding no-margin no-border" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）">
+            
+            <button title="Button 类型" class="city no-padding no-margin no-border" >搜索button</button>
         </div>
-        <input type="text" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）">
-        <input type="submit" value="搜索" title="Input 类型">
-        <button title="Button 类型">搜索button</button>
     </div>
     <div id="lower">
         <div id="qrcode">

@@ -1,22 +1,106 @@
 body{
-    font-size: small;
+    font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6em;
 }
 
 #upper{
-    background:rgb(110, 189, 235);
+    background:#008de1;
     height: 500px;
 
 }
 
-#upper #firstline{
-    margin-left: 100px;
-    padding-top: 30px;
+
+
+#firstline  button{
+    color: #fff;
+    background-color: #5db423;
+    border: none;
+    margin:10px 0 10px 15px;
+    padding: 7px 14px;
+    line-height: 12px;
+    width: 76px;
+    border-radius: 2px
+}
+
+#firstline a{
+    color: #fff;
+    font-size: 14px;
 }
 
 #opennewshop{
     float: right;
-    margin-right: 100px;
+    /*margin-right: 100px;*/
 }
- 
+
+
+.pull-right {
+    float: right;
+}
+
+.no-padding{
+    padding: 0px;
+}
+.no-margin{
+    margin: 0px;
+}
+
+.no-border{
+    border: 0px;
+}
+
+#upper #firstline{
+    margin: 0 127px 0 127px;
+    padding: 25px 0 0 0;
+    color: #fff;
+    word-spacing:0.4em;
+    line-height: 45px;
+    width: 1180px;
+}
+
+.map-logo{
+    text-align: center;
+    position: relative;
+    top: 27%;
+}
+
+.map-logo img{
+    width: 280px;
+    margin-bottom: 53px;
+
+}
+
+.city{
+    font-size: 20px;
+    height: 56px;
+}
+#city-select {
+    font-size: 23px;
+}
+
+.citycenter{
+    text-align: center;
+    position: relative;
+    top:27%;
+    line-height: 56px;
+    /*margin-top: 10px;*/
+}
+
+.citycenter select{
+    
+}
+
+.citycenter a:after {
+    display: inline-block;
+    top: 45%;
+    right: 13px;
+    margin-left: 5px;
+    vertical-align: middle;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #999;
+}
+.citycenter a:after, .citycenter a:before {
+    content: "";
+    position: absolute;
+}
