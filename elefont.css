@@ -1,0 +1,22 @@
+body{
+    font-size: small;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.6em;
+}
+
+#upper{
+    background:rgb(110, 189, 235);
+    height: 500px;
+
+}
+
+#upper #firstline{
+    margin-left: 100px;
+    padding-top: 30px;
+}
+
+#opennewshop{
+    float: right;
+    margin-right: 100px;
+}
+ 
