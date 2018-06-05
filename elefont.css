@@ -10,8 +10,6 @@ body{
 
 }
 
-
-
 #firstline  button{
     color: #fff;
     background-color: #5db423;
@@ -46,16 +44,16 @@ body{
 }
 
 .no-border{
-    border: 0px;
+    border: none;
 }
 
 #upper #firstline{
-    margin: 0 127px 0 127px;
+    margin: 0 130px 0 130px; /*右侧距离不对*/
     padding: 25px 0 0 0;
     color: #fff;
     word-spacing:0.4em;
     line-height: 45px;
-    width: 1180px;
+    width: 1480px;
 }
 
 .map-logo{
@@ -73,9 +71,11 @@ body{
 .city{
     font-size: 20px;
     height: 56px;
+    
 }
 #city-select {
-    font-size: 23px;
+    font-size: 20px;
+    width: 100px;
 }
 
 .citycenter{
@@ -86,10 +86,16 @@ body{
     /*margin-top: 10px;*/
 }
 
+#city-details{
+    width: 413px;
+    padding: 0px 0px 0px 18px;
+    font-size: 16px;
+}
+
 .citycenter select{
     
 }
-
+/*
 .citycenter a:after {
     display: inline-block;
     top: 45%;
@@ -103,4 +109,17 @@ body{
 .citycenter a:after, .citycenter a:before {
     content: "";
     position: absolute;
+}*/
+
+
+.citycenter button{
+    width: 128px;
+    background-color: rgb(247, 67, 66);
+    color: #fff;
+    margin-left: 5px;
+    line-height:45px; /*高度不一致*/
+}
+
+.mapfooter{
+    width: 1180px;
 }

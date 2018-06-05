@@ -18,23 +18,24 @@
 
 <body>
     <div id="upper">
-        <div id="firstline" class="container1">
+        <div id="firstline" class="container">
             <div class="row no-margin">
-                <div class="col-9 no-padding">
+                <div class="col-10 no-padding">
                     <!-- 图片链接： src 不能正常显示时，就会显示 alt 里面的东西-->
                     <a href="" title="还是会跳转到 Home Page 滴~~~">
                         <img src="https://shadow.elemecdn.com/faas/desktop/media/img/map-logo.9a26ef.png" alt="RoseStudy" width="220px">
                     </a>
                 </div>
-                <div class="col-3 no-padding">
-                    <button id="opennewshop" class="pull-right" onclick="window.open('openshop.html')">我要开店
-                    </button>
+                <div class="col-1 no-padding">
                     <!-- 原标签打开 "_self"-->
                     <a class="pull-right login" href="Register.html" title="欢迎光临'老用户'!">登录</a>
                     <span class="pull-right">&nbsp;|&nbsp;</span>
                     <!-- 新标签打开 -->
                     <a class="pull-right login" href="Register.html" target="_blank" title="你确定你要注册成为新用户吗？">注册</a>
-
+                </div>
+                <div class="col-1 no-padding">
+                    <button id="opennewshop" class="pull-right" onclick="window.open('openshop.html')">我要开店
+                    </button>
                 </div>
             </div>
         </div>
@@ -42,29 +43,30 @@
             <img src="http://shadow.elemecdn.com/faas/desktop/media/svg/map-logo-center.425427.svg" alt="eleme">
         </div>
         <div class="citycenter">
-            <!-- <select id="city-select" name="citySelect" class="city no-padding no-margin no-border">
+            <select id="city-select" name="citySelect" class="city no-padding no-margin no-border">
                 <option value="0" disabled="disabled">请选择</option>
                 <option value="1">上海</option>
                 <option value="2">北京</option>
                 <option value="3">广州</option>
                 <option value="4">深圳</option>
-            </select> -->
-            <a class="city no-padding no-margin no-border">请选择</a>
-            <input type="text" class="city no-padding no-margin no-border" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）">
-            
-            <button title="Button 类型" class="city no-padding no-margin no-border" >搜索button</button>
+            </select>
+            <!--
+                <a class="city no-padding no-margin no-border">请选择</a>
+            -->
+            <input id="city-details" type="text" class="city no-margin no-border" placeholder="请输入你的收货地址（写字楼，小区，街道或者学校）">
+            <button title="Button 类型" class="city no-padding no-margin no-border">搜索</button>
         </div>
     </div>
-    <div id="lower">
-        <div id="qrcode">
+    <div id="lower" class="mapfooter">
+        <div id="qrcode" class="mapfooter-img">
             <img src="https://shadow.elemecdn.com/faas/desktop/media/img/appqc.95e532.png" alt="扫码下载 APP">
         </div>
-        <div id="popularize">
+        <div id="popularize" class="mapfooter-text">
             <p>新用户首次下单</p>
             <strong>最高立减30元</strong>
             <p>立即下载APP，享受更多优惠吧！！！</p>
         </div>
-        <div id="footer-pageextend">
+        <div id="footer-pageextend" class="mapfooter-extend">
             <a href="openshop.html">我要开店</a>
             <a href="contactus.html">联系我们</a>
             <a href="agreement.html">服务条款和协议</a>
@@ -73,7 +75,7 @@
             <a href="badcredit.html" target="_blank">失信人员查询</a>
         </div>
         <!--空格如何处理？？？-->
-        <div id="footer-copyright">
+        <div id="footer-copyright" class="mapfooter-copyright">
             互联网药品信息服务资格证书:
             <a href="http://www.shfda.gov.cn/gb/node2/yjj/index.html" target="_blank">(沪)-经营性-2016-0011</a>
             &nbsp;|&nbsp;增值电信业务许可证 :
@@ -84,7 +86,7 @@
             <a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20120305173227823" target="_blank">上海工商行政管理</a>
             Copyright ©2008-2018 上海拉扎斯信息科技有限公司, All Rights Reserved.
         </div>
-        <div od="footer-police">
+        <div id="footer-police" class="mapfooter-police">
             <a href="http://www.zx110.org/picp/?sn=310100103568" title="要报警，请点这里！">
                 <img src="http://shadow.elemecdn.com/faas/desktop/media/img/picp_bg.e373b3.jpg" alt="已通过沪公网备案，备案号 310100103568">
             </a>
